@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="translate from any language to cebolinha dialect">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+	<title>Cebolatol</title>
+
+	<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+	<style type="text/css">
+		/**
+		 * Hide when Angular is not yet loaded and initialized
+		 */
+		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+			display: none !important;
+		}
+	</style>
+</head>
+<body ng-app="cebolatol" layout="row" ng-cloak>
+
+	<!-- Main layout -->
+	<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+		<!-- Top toolbar -->
+    	<md-toolbar layout="row" class="md-whiteframe-z1">
+			<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Menu">
+				<md-icon md-svg-icon="menu" ></md-icon>
+      		</md-button>
+			<h1>Cebolatol</h1>
+		</md-toolbar>
+
+		<!-- Main content -->
+		<md-content flex id="content"></md-content>
+	</div>
+
+	<!-- Importa AngularJS, Angular-Material and other required stuffs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+
+	<!-- Initialize Angular App -->
+	<script type="text/javascript">
+		angular
+			.module('cebolatol', ['ngMaterial'])
+			.config(function($mdThemingProvider, $mdIconProvider) {
+				$mdThemingProvider.theme('default')
+					.primaryPalette('brown')
+					.accentPalette('red');
+			});
+    </script>
+</body>
+</html>
