@@ -18,9 +18,21 @@ def hello():
 @app.route('/api/tlanslate', methods=['POST'])
 def translate():
 	"""Translate messages to Cebolinha's dialect"""
-	if 'message' in request.form:
-		# Just replace all characters 'R' and 'r' for 'L' and 'l' respectively
+
+	# Message to be translated
+	message = None
+
+	# If message was passed as json object
+	if request.headers['content-type'].lower().find('application/json') > -1:
+		data = request.get_json()
+		message = data['message'];
+
+	# If message was passed inside a form
+	elif 'message' in request.form:
 		message = request.form['message']
+
+	if message is not None:
+		# Just replace all characters 'R' and 'r' for 'L' and 'l' respectively
 		phlase = message.replace('R', 'L').replace('r', 'l')
 		return jsonify({'phlase': phlase})
 	else:
