@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cebolatol">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,21 +19,51 @@
 		}
 	</style>
 </head>
-<body ng-app="cebolatol" layout="row" ng-cloak>
+<body ng-cloak>
 
 	<!-- Main layout -->
-	<div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+	<div layout="column" layout-fill>
 
 		<!-- Top toolbar -->
-    	<md-toolbar layout="row" class="md-whiteframe-z1">
-			<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show Menu">
-				<md-icon md-svg-icon="menu" ></md-icon>
-      		</md-button>
-			<h1>Cebolatol</h1>
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+				<span>Cebolatol</span>
+				<!-- Fill up the space between left and right area -->
+				<span flex></span>
+				<md-button href="https://github.com/julianolf/cebolatol" target="_blank" class="md-icon-button" aria-label="Github">
+					<md-tooltip md-direction="left">View Source on Github</md-tooltip>
+					<md-icon md-svg-icon="{{ ic_github }}"></md-icon>
+				</md-button>
+				<md-button>ABOUT</md-button>
+			</div>
 		</md-toolbar>
 
 		<!-- Main content -->
-		<md-content flex id="content"></md-content>
+		<md-content layout-padding>
+			<!-- Short info about the app -->
+			<h1 class="md-title md-accent">A kind of <del>joke</del> translator tool &nbsp;</h1>
+			<p class="md-body-1">From any language to Cebolinha's dialect.</p>
+		</md-content>
+		<md-content layout="row" layout-sm="column">
+			<!-- Card for input text -->
+			<md-card flex>
+				<md-card-content>
+					<md-input-container>
+						<label>Type your text here</label>
+						<textarea rows="4"></textarea>
+					</md-input-container>
+				</md-card-content>
+			</md-card>
+			<!-- Card for result text -->
+			<md-card flex>
+				<md-card-content>
+					<md-input-container>
+						<label>Youl text tlanslated</label>
+						<textarea rows="4" disabled="disabled"></textarea>
+					</md-input-container>
+				</md-card-content>
+			</md-card>
+		</md-content>
 	</div>
 
 	<!-- Importa AngularJS, Angular-Material and other required stuffs -->
@@ -46,10 +76,8 @@
 	<script type="text/javascript">
 		angular
 			.module('cebolatol', ['ngMaterial'])
-			.config(function($mdThemingProvider, $mdIconProvider) {
-				$mdThemingProvider.theme('default')
-					.primaryPalette('brown')
-					.accentPalette('red');
+			.config(function($mdThemingProvider) {
+				$mdThemingProvider.theme('default');
 			});
     </script>
 </body>
