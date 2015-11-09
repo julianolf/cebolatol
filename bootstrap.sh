@@ -4,11 +4,11 @@
 apt-get update
 apt-get install -y python3 python3-pip
 
-# API root directory
-API_DIR='/vagrant'
+# App root directory
+APP_DIR='/vagrant'
 
 # install required python packages
-pip3 install -r $API_DIR/requirements.txt
+pip3 install -r $APP_DIR/requirements.txt
 
 # start cebolatol app
-python3 $API_DIR/cebolatol.py
+python3 $APP_DIR/cebolatol.py
