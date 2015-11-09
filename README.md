@@ -16,11 +16,11 @@ We don't know, have some fun?
 
 ## How do I use it?
 
-cebolatol provides two different ways to interact with it, an RESTful API that can be accessed as specified below and an small web application available _here_. In either cases you sends your message and receives the same one translated.
+cebolatol provides two different ways to interact with it, an RESTful API that can be accessed as specified below and an small web application available [here](http://cebolatol.julianofernandes.com.br). In either cases you sends your message and receives the same one translated.
 
 ### API
 
-How explained before it is a very simple application and its API provides one single resource to query `/api/tlanslate`. One single parameter is required `message` containing, obviously, the message to be translated. The project is hosted _here_ and the example will reference to that address.
+How explained before it is a very simple application and its API provides one single resource to query `/api/tlanslate`. One single parameter is required `message` containing, obviously, the message to be translated. The project is hosted [here](http://cebolatol.julianofernandes.com.br) and the example will reference to that address.
 
 * Request details
 	* **RESOURCE** /api/tlanslate
@@ -31,7 +31,7 @@ How explained before it is a very simple application and its API provides one si
 
 Performing the request using the command line tool _curl_.
 
-	$ curl -X POST http://domain/api/tlanslate \
+	$ curl -X POST http://cebolatol.julianofernandes.com.br/api/tlanslate \
 		-H 'Content-Type: application/json' \
 		-d '{"message": "my text to be translated"}'
 
