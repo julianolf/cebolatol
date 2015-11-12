@@ -17,12 +17,16 @@
     [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
       display: none !important;
     }
+
+    .main {
+      background-color: #f5f5f5;
+    }
   </style>
 </head>
-<body ng-cloak>
+<body class="main" ng-cloak>
 
   <!-- Main layout -->
-  <div layout="column" layout-fill>
+  <div class="main" layout="column" layout-fill>
 
     <!-- Top toolbar -->
     <md-toolbar  ng-controller="ToolbarCtrl as tlCtrl">
@@ -32,19 +36,19 @@
         <span flex></span>
         <md-button href="https://github.com/julianolf/cebolatol" target="_blank" class="md-icon-button" aria-label="Github">
           <md-tooltip md-direction="left">View Source on Github</md-tooltip>
-          <md-icon md-svg-icon="{{ ic_github }}"></md-icon>
+          <md-icon md-svg-src="{{ ic_github }}"></md-icon>
         </md-button>
         <md-button ng-click="tlCtrl.about()">ABOUT</md-button>
       </div>
     </md-toolbar>
 
     <!-- Main content -->
-    <md-content layout-padding>
+    <md-content class="main" layout-padding>
       <!-- Short info about the app -->
       <h1 class="md-title md-accent">A kind of <del>joke</del> translator tool &nbsp;</h1>
       <p class="md-body-1">Flom any language to Cebolinha's dialect.</p>
     </md-content>
-    <md-content layout="row" layout-sm="column" ng-controller="TranslateCtrl as trCtrl">
+    <md-content class="main" layout="row" layout-sm="column" ng-controller="TranslateCtrl as trCtrl">
       <!-- Card for input text -->
       <md-card flex>
         <md-card-content>
@@ -74,6 +78,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
 
   <!-- Initialize Angular App -->
-  <script src="/static/js/main.js"></script>
+  <script src="{{ js_main }}"></script>
 </body>
 </html>

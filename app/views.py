@@ -6,8 +6,15 @@ from flask import request, jsonify, url_for, render_template
 @app.route('/')
 def index():
     """Return Cebolinha Translator WebApp"""
+    logo = url_for('.static', filename='images/logo.svg')
     github_icon = url_for('.static', filename='images/github.svg')
-    return render_template('index.html', ic_github=github_icon)
+    js = url_for('.static', filename='js/main.js')
+    return render_template(
+        'index.html',
+        ic_github=github_icon,
+        ic_logo=logo,
+        js_main=js
+    )
 
 
 @app.route('/api')
