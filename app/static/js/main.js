@@ -48,11 +48,12 @@ cebolatolControllers.controller('ToolbarCtrl', ['$scope', '$mdDialog',
 var cebolatolApp = angular
   .module('cebolatol', ['ngMaterial', 'cebolatolServices', 'cebolatolControllers'])
   .config(function($mdThemingProvider) {
-    var gebolagreenMap = $mdThemingProvider.extendPalette('green', {
-      '500': '439d3d'
+    var cebolagreenMap = $mdThemingProvider.extendPalette('green', {
+      '500': '439d3d',
+      'contrastDefaultColor': 'light'
     });
 
-    $mdThemingProvider.definePalette('cebolagreen', gebolagreenMap);
+    $mdThemingProvider.definePalette('cebolagreen', cebolagreenMap);
 
     $mdThemingProvider.theme('default')
       .primaryPalette('cebolagreen')

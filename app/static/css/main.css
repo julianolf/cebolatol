@@ -1,0 +1,28 @@
+/* Hide when Angular is not yet loaded and initialized */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/* Force background to be greyish */
+.main {
+  background-color: #f5f5f5;
+}
+
+/* For some reason there isn't a simple
+   way to force toolbar display a shadow */
+.my-toolbar {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust image logo's size */
+.logo {
+  width: 70%;
+  height: 70%;
+  margin: 16px;
+}
+
+/* I just don't like the way it looks
+   with the default margin here */
+.my-headline {
+  margin-bottom: 0;
+}

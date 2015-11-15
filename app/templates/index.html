@@ -4,32 +4,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="translate from any language to cebolinha dialect">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     
   <title>Cebolatol</title>
 
+  <link rel="icon" href="{{ ic_favico }}">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
-  <style type="text/css">
-    /**
-     * Hide when Angular is not yet loaded and initialized
-     */
-    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-      display: none !important;
-    }
-
-    .main {
-      background-color: #f5f5f5;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ css_main }}">
 </head>
-<body class="main" ng-cloak>
-
+<body ng-cloak>
   <!-- Main layout -->
   <div class="main" layout="column" layout-fill>
-
     <!-- Top toolbar -->
-    <md-toolbar  ng-controller="ToolbarCtrl as tlCtrl">
+    <md-toolbar class="my-toolbar" ng-controller="ToolbarCtrl as tlCtrl">
       <div class="md-toolbar-tools">
         <span>Cebolatol</span>
         <!-- Fill up the space between left and right area -->
@@ -41,32 +29,38 @@
         <md-button ng-click="tlCtrl.about()">ABOUT</md-button>
       </div>
     </md-toolbar>
-
     <!-- Main content -->
-    <md-content class="main" layout-padding>
-      <!-- Short info about the app -->
-      <h1 class="md-title md-accent">A kind of <del>joke</del> translator tool &nbsp;</h1>
-      <p class="md-body-1">Flom any language to Cebolinha's dialect.</p>
-    </md-content>
-    <md-content class="main" layout="row" layout-sm="column" ng-controller="TranslateCtrl as trCtrl">
-      <!-- Card for input text -->
-      <md-card flex>
-        <md-card-content>
-          <md-input-container>
-            <label>Type your text here</label>
-            <textarea rows="4" ng-model="trCtrl.usrText" ng-keyup="trCtrl.send()"></textarea>
-          </md-input-container>
-        </md-card-content>
-      </md-card>
-      <!-- Card for result text -->
-      <md-card flex>
-        <md-card-content>
-          <md-input-container>
-            <label>Youl text tlanslated</label>
-            <textarea rows="4" ng-model="trCtrl.trsText" ng-readonly="true"></textarea>
-          </md-input-container>
-        </md-card-content>
-      </md-card>
+    <md-content class="main" layout="column">
+      <div layout="row" layout-sm="column" layout-padding>
+        <div layout="column" layout-sm="row" layout-align="center center" flex="auto">
+          <img class="logo" src="{{ ic_logo }}" alt="cebolatol logo">
+        </div>
+        <div layout="column" layout-align="center" layout-align-sm="center center" flex="grow">
+          <!-- Short info about the app -->
+          <h1 class="md-headline my-headline">A kind of <del>joke</del> translator tool</h1>
+          <p class="md-subhead">Flom any language to Cebolinha's dialect.</p>
+        </div>
+      </div>
+      <div layout="row" layout-sm="column" ng-controller="TranslateCtrl as trCtrl" layout-padding>
+        <!-- Card for input text -->
+        <md-card flex>
+          <md-card-content>
+            <md-input-container>
+              <label>Type your text here</label>
+              <textarea rows="4" ng-model="trCtrl.usrText" ng-keyup="trCtrl.send()"></textarea>
+            </md-input-container>
+          </md-card-content>
+        </md-card>
+        <!-- Card for result text -->
+        <md-card flex>
+          <md-card-content>
+            <md-input-container>
+              <label>Youl text tlanslated</label>
+              <textarea rows="4" ng-model="trCtrl.trsText" ng-readonly="true"></textarea>
+            </md-input-container>
+          </md-card-content>
+        </md-card>
+      </div>
     </md-content>
   </div>
 
