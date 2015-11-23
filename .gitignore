@@ -58,3 +58,8 @@ target/
 
 # Vagrant stuffs
 .vagrant/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
