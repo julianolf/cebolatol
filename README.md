@@ -17,7 +17,7 @@ We don't know, have some fun?
 
 ## How do I use it?
 
-cebolatol provides two different ways to interact with it, an RESTful API that can be accessed as specified below and an small web application available [here](http://cebolatol.julianofernandes.com.br). In either cases you sends your message and receives the same one translated.
+cebolatol provides two different ways to interact with it, an RESTful API that can be accessed as specified below and an small web application available ~~here~~. In either cases you sends your message and receives the same one translated.
 
 ### API
 
