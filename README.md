@@ -1,4 +1,5 @@
 # cebolato~~r~~l
+[![Updates](https://pyup.io/repos/github/julianolf/cebolatol/shield.svg)](https://pyup.io/repos/github/julianolf/cebolatol/) [![Python 3](https://pyup.io/repos/github/julianolf/cebolatol/python-3-shield.svg)](https://pyup.io/repos/github/julianolf/cebolatol/) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
 Translator tool from any langue to Cebolinha's dialect.
 
