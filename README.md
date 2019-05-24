@@ -21,7 +21,7 @@ cebolatol provides two different ways to interact with it, an RESTful API that c
 
 ### API
 
-How explained before it is a very simple application and its API provides one single resource to query `/api/tlanslate`. One single parameter is required `message` containing, obviously, the message to be translated. The project is hosted [here](http://cebolatol.julianofernandes.com.br) and the example will reference to that address.
+How explained before it is a very simple application and its API provides one single resource to query `/api/tlanslate`. One single parameter is required `message` containing, obviously, the message to be translated. The project is hosted ~~here~~ and the example will reference to that address.
 
 * Request details
 	* **RESOURCE** /api/tlanslate
